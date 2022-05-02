@@ -2,6 +2,9 @@ import { Version } from '@microsoft/sp-core-library';
 /* 
 Darrell:  Added extra property panes field types per
 https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/build-a-hello-world-web-part
+---
+These properties can be predefined with default values.  
+See https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/guidance/simplify-adding-web-parts-with-preconfigured-entries
 */
 import {
   IPropertyPaneConfiguration,

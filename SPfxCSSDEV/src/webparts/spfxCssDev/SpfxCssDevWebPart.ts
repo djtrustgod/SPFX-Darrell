@@ -37,7 +37,7 @@ export default class SpfxCssDevWebPart extends BaseClientSideWebPart<ISpfxCssDev
         <div class="${styles.container}">
           <div class="${styles.row}">
             <div class="${styles.column}">
-              <span class="${styles.title}">Welcome to My SPFX App!</span>
+              <span class="${styles.title}">Welcome to My SPFX Playground App!</span>
               <p class="${styles.subTitle}">Edit the web part to display the properties:</p>
               <!-- Darrell: displaying Customized Properties -->
               <p class="${styles.description}">${escape(this.properties.description)}</p>
@@ -53,7 +53,7 @@ export default class SpfxCssDevWebPart extends BaseClientSideWebPart<ISpfxCssDev
         </div>
       </div>`;
   }
-
+  /* Darrell Note: See https://dreamsof.dev/2020-09-21-typescript-upgrade-breaking-dataversion-get-override-spfx11/ */
   protected get dataVersion(): Version {
     return Version.parse('1.0');
   }

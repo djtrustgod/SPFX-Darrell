@@ -58,7 +58,7 @@ export default class SpfxCssDevWebPart extends BaseClientSideWebPart<ISpfxCssDev
   }
   /* Darrell Note: See https://dreamsof.dev/2020-09-21-typescript-upgrade-breaking-dataversion-get-override-spfx11/ */
   protected get dataVersion(): Version {
-    return Version.parse('1.0');
+    return Version.parse('1.1');
   }
   /*
   Darrell

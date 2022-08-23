@@ -48,6 +48,8 @@ Version|Date|Comments
 
 - Clone this repository
 - Ensure that you are at the solution folder
+- Make Edits
+- Update Version Numbers in the ‘package.json’ and the ‘config/package-solution.json’  
 - in the command-line run:
 
 - **gulp serve (if you want to test in workbench)**
@@ -70,6 +72,7 @@ This extension illustrates the following concepts:
 ## References
 
 - [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
+- [Darrell added: Version Numbers in SPFX](https://n8d.at/how-to-version-new-sharepoint-framework-projects)
 - [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
 - [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)

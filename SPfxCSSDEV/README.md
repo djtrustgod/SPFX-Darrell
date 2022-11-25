@@ -54,8 +54,8 @@ Version|Date|Comments
 
 - **gulp serve (if you want to test in workbench)**
 - **gulp build**
-- **gulp bundle --ship**
-- **gulp package-solution --ship (if you have an error try the --debug flag instead of --ship) See https://stackoverflow.com/questions/50968594/gulp-bundle-ship-the-build-failed-because-a-task-wrote-output-to-stderr)**
+- **gulp bundle --ship (if you have an error try the --debug flag instead of --ship) See https://stackoverflow.com/questions/50968594/gulp-bundle-ship-the-build-failed-because-a-task-wrote-output-to-stderr)**
+- **gulp package-solution --ship**
 - **Locate .sppkg file in dir sharepoint\solution**
 - **Add to Tenant AppCatalog SP apps and deploy**
 

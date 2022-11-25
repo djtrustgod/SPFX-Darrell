@@ -49,7 +49,7 @@ export default class SpfxCssDevWebPart extends BaseClientSideWebPart<ISpfxCssDev
               <p class="${styles.description}">${escape(this.properties.test2)}</p>
               <p class="${styles.description}">${this.properties.test3}</p>
               <a href="https://aka.ms/spfx" class="${styles.button}">
-                <span class="${styles.label}">Learn more</span>
+                <span class="${styles.label}">Learn more >></span>
               </a>
             </div>
           </div>

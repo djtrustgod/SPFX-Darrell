@@ -3,7 +3,7 @@
   "solution": {
     "name": "spfx-css-dev-client-side-solution",
     "id": "ce39c244-3be6-434f-b190-90efbbbde6df",
-    "version": "1.0.5.0",
+    "version": "1.0.6.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,

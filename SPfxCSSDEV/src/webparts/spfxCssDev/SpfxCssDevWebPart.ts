@@ -42,7 +42,7 @@ export default class SpfxCssDevWebPart extends BaseClientSideWebPart<ISpfxCssDev
             <div class="${styles.column}">
               <span class="${styles.title}">Welcome to My SPFX Playground App!</span>
               <p class="${styles.subTitle}">Edit the web part to display the properties:</p>
-              <!-- Darrell: displaying Customized Properties -->
+              <!-- Displaying Customized Properties -->
               <p class="${styles.description}">${escape(this.properties.description)}</p>
               <p class="${styles.description}">${escape(this.properties.test)}</p>
               <p class="${styles.description}">${this.properties.test1}</p>

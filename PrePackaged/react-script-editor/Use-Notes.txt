@@ -1,0 +1,57 @@
+Modern Script Editor Web Part Use Notes 
+The CSS class of elements on Modern Web parts are dynamic, so will need to disable  via wildcard.  
+<style>
+        /* Uses Wildcard selector.  See: https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors */
+        /* Hide all alink classes containing the name 'seeAll-' */
+        a[class*="seeAll-"] {
+            display: none !important;
+        }
+    </style>
+	
+	
+	
+Example code formatting and self running function:
+
+<div>Modern Script Editor Web Part<div>
+
+<script>
+// It is preferred to use a self-executing function around your script if
+// code should run on each page load
+// See https://developer.mozilla.org/en-US/docs/Glossary/IIFE
+    (function () {
+        // put script here
+    })() 
+</script>
+
+
+
+
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div id="tradingview_e7aa0"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script type="text/javascript">
+  new TradingView.widget(
+  {
+  "width": 980,
+  "height": 610,
+  "symbol": "NASDAQ:AAPL",
+  "interval": "D",
+  "timezone": "Etc/UTC",
+  "theme": "light",
+  "style": "1",
+  "locale": "en",
+  "toolbar_bg": "#f1f3f6",
+  "enable_publishing": false,
+  "allow_symbol_change": true,
+  "container_id": "tradingview_e7aa0"
+}
+  );
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+Other Notes
+Tried to build 1.0.0.17 on Node.js 14.17.5 with SPFX 1.12.1 and it failed
+Tried to build 1.0.20 on Node.js 14.17.5 with SPFX 1.13.1 and it failed

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "vibe-code-test-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/vibeCodeTest/VibeCodeTestWebPart.js",
+          "manifest": "./src/webparts/vibeCodeTest/VibeCodeTestWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "VibeCodeTestWebPartStrings": "lib/webparts/vibeCodeTest/loc/{locale}.js"
+  }
+}

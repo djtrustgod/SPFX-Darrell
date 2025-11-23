@@ -8,22 +8,22 @@ import {
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
 
-import * as strings from 'VibeCodeTestWebPartStrings';
-import VibeCodeTest from './components/VibeCodeTest';
-import { IVibeCodeTestProps } from './components/IVibeCodeTestProps';
+import * as strings from 'DIsplaySiteOwnersWebPartStrings';
+import DIsplaySiteOwners from './components/DIsplaySiteOwners';
+import { IDIsplaySiteOwnersProps } from './components/IDIsplaySiteOwnersProps';
 
-export interface IVibeCodeTestWebPartProps {
+export interface IDIsplaySiteOwnersWebPartProps {
   description: string;
 }
 
-export default class VibeCodeTestWebPart extends BaseClientSideWebPart<IVibeCodeTestWebPartProps> {
+export default class DIsplaySiteOwnersWebPart extends BaseClientSideWebPart<IDIsplaySiteOwnersWebPartProps> {
 
   private _isDarkTheme: boolean = false;
   private _environmentMessage: string = '';
 
   public render(): void {
-    const element: React.ReactElement<IVibeCodeTestProps> = React.createElement(
-      VibeCodeTest,
+    const element: React.ReactElement<IDIsplaySiteOwnersProps> = React.createElement(
+      DIsplaySiteOwners,
       {
         description: this.properties.description,
         isDarkTheme: this._isDarkTheme,

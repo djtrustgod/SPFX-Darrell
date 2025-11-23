@@ -1,10 +1,10 @@
 import * as React from 'react';
-import styles from './VibeCodeTest.module.scss';
-import type { IVibeCodeTestProps } from './IVibeCodeTestProps';
+import styles from './DIsplaySiteOwners.module.scss';
+import type { IDIsplaySiteOwnersProps } from './IDIsplaySiteOwnersProps';
 import { escape } from '@microsoft/sp-lodash-subset';
 
-export default class VibeCodeTest extends React.Component<IVibeCodeTestProps> {
-  public render(): React.ReactElement<IVibeCodeTestProps> {
+export default class DIsplaySiteOwners extends React.Component<IDIsplaySiteOwnersProps> {
+  public render(): React.ReactElement<IDIsplaySiteOwnersProps> {
     const {
       description,
       isDarkTheme,
@@ -14,7 +14,7 @@ export default class VibeCodeTest extends React.Component<IVibeCodeTestProps> {
     } = this.props;
 
     return (
-      <section className={`${styles.vibeCodeTest} ${hasTeamsContext ? styles.teams : ''}`}>
+      <section className={`${styles.dIsplaySiteOwners} ${hasTeamsContext ? styles.teams : ''}`}>
         <div className={styles.welcome}>
           <img alt="" src={isDarkTheme ? require('../assets/welcome-dark.png') : require('../assets/welcome-light.png')} className={styles.welcomeImage} />
           <h2>Well done, {escape(userDisplayName)}!</h2>

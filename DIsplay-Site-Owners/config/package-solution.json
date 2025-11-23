@@ -1,8 +1,8 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "vibe-code-test-client-side-solution",
-    "id": "0487c126-0466-40e3-9bd0-86bd1bd73ea6",
+    "name": "d-isplay-site-owners-client-side-solution",
+    "id": "d4a161c4-1529-4bd5-a67d-09b4ca096a65",
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
@@ -16,10 +16,10 @@
     },
     "metadata": {
       "shortDescription": {
-        "default": "VibeCodeTest description"
+        "default": "DIsplay-Site-Owners description"
       },
       "longDescription": {
-        "default": "VibeCodeTest description"
+        "default": "DIsplay-Site-Owners description"
       },
       "screenshotPaths": [],
       "videoUrl": "",
@@ -27,14 +27,14 @@
     },
     "features": [
       {
-        "title": "vibe-code-test Feature",
-        "description": "The feature that activates elements of the vibe-code-test solution.",
-        "id": "e0e8490e-bdef-43fa-a1f0-f9803f34c128",
+        "title": "d-isplay-site-owners Feature",
+        "description": "The feature that activates elements of the d-isplay-site-owners solution.",
+        "id": "375c54cd-5701-4481-b20e-1047da007654",
         "version": "1.0.0.0"
       }
     ]
   },
   "paths": {
-    "zippedPackage": "solution/vibe-code-test.sppkg"
+    "zippedPackage": "solution/d-isplay-site-owners.sppkg"
   }
 }

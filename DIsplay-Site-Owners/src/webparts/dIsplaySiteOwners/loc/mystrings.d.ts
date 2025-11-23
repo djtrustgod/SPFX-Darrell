@@ -1,4 +1,4 @@
-declare interface IVibeCodeTestWebPartStrings {
+declare interface IDIsplaySiteOwnersWebPartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
   DescriptionFieldLabel: string;
@@ -13,7 +13,7 @@ declare interface IVibeCodeTestWebPartStrings {
   UnknownEnvironment: string;
 }
 
-declare module 'VibeCodeTestWebPartStrings' {
-  const strings: IVibeCodeTestWebPartStrings;
+declare module 'DIsplaySiteOwnersWebPartStrings' {
+  const strings: IDIsplaySiteOwnersWebPartStrings;
   export = strings;
 }

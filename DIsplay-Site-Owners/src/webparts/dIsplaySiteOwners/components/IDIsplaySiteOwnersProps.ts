@@ -1,4 +1,4 @@
-export interface IVibeCodeTestProps {
+export interface IDIsplaySiteOwnersProps {
   description: string;
   isDarkTheme: boolean;
   environmentMessage: string;

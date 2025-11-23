@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "d-isplay-site-owners-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/dIsplaySiteOwners/DIsplaySiteOwnersWebPart.js",
+          "manifest": "./src/webparts/dIsplaySiteOwners/DIsplaySiteOwnersWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "DIsplaySiteOwnersWebPartStrings": "lib/webparts/dIsplaySiteOwners/loc/{locale}.js"
+  }
+}

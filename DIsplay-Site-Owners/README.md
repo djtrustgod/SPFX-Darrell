@@ -1,10 +1,10 @@
-# DisplaySiteOwners
+# Display Site Owners
 
 ## Summary
 
-Short summary on functionality and used technologies.
+This SharePoint Framework (SPFx) web part displays the current site owners for a SharePoint site. It fetches owner information from the SharePoint REST API and presents it in a clean, professional interface using Microsoft Fluent UI components.
 
-[picture of the solution in action, if possible]
+The web part automatically retrieves users from the site's Associated Owner Group and displays each owner with their profile picture, name, and email address in an intuitive card-based layout.
 
 ## Used SharePoint Framework Version
 
@@ -15,24 +15,23 @@ Short summary on functionality and used technologies.
 - [SharePoint Framework](https://aka.ms/spfx)
 - [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
 
-> Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
-
 ## Prerequisites
 
-> Any special pre-requisites?
+- SharePoint Online environment
+- Permissions to access site owner information
+- Node.js v16 or v18 (for development)
 
 ## Solution
 
-| Solution    | Author(s)                                               |
-| ----------- | ------------------------------------------------------- |
-| folder name | Author details (name, company, twitter alias with link) |
+| Solution             | Author(s) |
+| -------------------- | --------- |
+| Display-Site-Owners  | -         |
 
 ## Version history
 
-| Version | Date             | Comments        |
-| ------- | ---------------- | --------------- |
-| 1.1     | March 10, 2021   | Update comment  |
-| 1.0     | January 29, 2021 | Initial release |
+| Version | Date              | Comments        |
+| ------- | ----------------- | --------------- |
+| 0.0.1   | November 23, 2025 | Initial release |
 
 ## Disclaimer
 
@@ -40,34 +39,37 @@ Short summary on functionality and used technologies.
 
 ---
 
-## Minimal Path to Awesome
+## Installation
 
 - Clone this repository
-- Ensure that you are at the solution folder
-- in the command-line run:
-  - **npm install**
-  - **gulp serve**
-
-> Include any additional steps as needed.
+- Navigate to the solution folder
+- In the command line, run:
+  - `npm install`
+  - `gulp serve`
 
 ## Features
 
-Description of the extension that expands upon high-level summary above.
+This web part provides the following functionality:
 
-This extension illustrates the following concepts:
+- **Automatic Site Owner Retrieval**: Fetches site owners from the SharePoint Associated Owner Group via REST API
+- **User-Friendly Display**: Shows owner information with profile pictures, names, and email addresses
+- **Fluent UI Integration**: Uses Microsoft Fluent UI components (Persona, Spinner, MessageBar, Stack) for a consistent Microsoft 365 experience
+- **Loading States**: Displays a loading spinner while fetching data
+- **Error Handling**: Shows user-friendly error messages when issues occur
+- **Responsive Design**: Professional card-based layout with hover effects and theme-aware styling
+- **Multi-Platform Support**: Works in SharePoint, Microsoft Teams, Outlook, and Office
+- **Empty State Handling**: Provides helpful messaging when no owners are found
 
-- topic 1
-- topic 2
-- topic 3
+This web part demonstrates the following SPFx concepts:
 
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
-
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
+- Using SPHttpClient for SharePoint REST API calls
+- React component state management and lifecycle methods
+- Integration with Fluent UI React components
+- Theme-aware styling with CSS variables
+- Error handling and user feedback patterns
+- TypeScript interfaces and type safety
 
 ## References
 
 - [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
-- [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
-- [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
-- [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
-- [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
+- [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp)

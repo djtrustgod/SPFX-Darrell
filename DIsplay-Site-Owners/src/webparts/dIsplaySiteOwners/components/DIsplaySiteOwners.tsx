@@ -1,42 +1,107 @@
 import * as React from 'react';
-import styles from './DIsplaySiteOwners.module.scss';
-import type { IDIsplaySiteOwnersProps } from './IDIsplaySiteOwnersProps';
-import { escape } from '@microsoft/sp-lodash-subset';
+import styles from './DisplaySiteOwners.module.scss';
+import type { IDisplaySiteOwnersProps, ISiteOwner } from './IDisplaySiteOwnersProps';
+import { SPHttpClient, SPHttpClientResponse } from '@microsoft/sp-http';
+import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
+import { MessageBar, MessageBarType } from '@fluentui/react/lib/MessageBar';
+import { Persona, PersonaSize } from '@fluentui/react/lib/Persona';
+import { Stack } from '@fluentui/react/lib/Stack';
 
-export default class DIsplaySiteOwners extends React.Component<IDIsplaySiteOwnersProps> {
-  public render(): React.ReactElement<IDIsplaySiteOwnersProps> {
-    const {
-      description,
-      isDarkTheme,
-      environmentMessage,
-      hasTeamsContext,
-      userDisplayName
-    } = this.props;
+export interface IDisplaySiteOwnersState {
+  siteOwners: ISiteOwner[];
+  loading: boolean;
+  error: string | undefined;
+}
+
+export default class DisplaySiteOwners extends React.Component<IDisplaySiteOwnersProps, IDisplaySiteOwnersState> {
+  constructor(props: IDisplaySiteOwnersProps) {
+    super(props);
+    this.state = {
+      siteOwners: [],
+      loading: true,
+      error: undefined
+    };
+  }
+
+  public componentDidMount(): void {
+    this._loadSiteOwners().catch((error) => {
+      console.error('Error loading site owners:', error);
+    });
+  }
+
+  private async _loadSiteOwners(): Promise<void> {
+    const { spHttpClient, siteUrl } = this.props;
+
+    try {
+      const response: SPHttpClientResponse = await spHttpClient.get(
+        `${siteUrl}/_api/web/AssociatedOwnerGroup/Users?$select=Id,Title,Email,LoginName`,
+        SPHttpClient.configurations.v1
+      );
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch site owners: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      const owners: ISiteOwner[] = data.value;
+
+      this.setState({
+        siteOwners: owners,
+        loading: false,
+        error: undefined
+      });
+    } catch (error) {
+      this.setState({
+        siteOwners: [],
+        loading: false,
+        error: error.message || 'An error occurred while loading site owners.'
+      });
+    }
+  }
+
+  public render(): React.ReactElement<IDisplaySiteOwnersProps> {
+    const { hasTeamsContext } = this.props;
+    const { siteOwners, loading, error } = this.state;
 
     return (
-      <section className={`${styles.dIsplaySiteOwners} ${hasTeamsContext ? styles.teams : ''}`}>
-        <div className={styles.welcome}>
-          <img alt="" src={isDarkTheme ? require('../assets/welcome-dark.png') : require('../assets/welcome-light.png')} className={styles.welcomeImage} />
-          <h2>Well done, {escape(userDisplayName)}!</h2>
-          <div>{environmentMessage}</div>
-          <div>Web part property value: <strong>{escape(description)}</strong></div>
+      <section className={`${styles.displaySiteOwners} ${hasTeamsContext ? styles.teams : ''}`}>
+        <div className={styles.header}>
+          <h2>Site Owners</h2>
         </div>
-        <div>
-          <h3>Welcome to SharePoint Framework!</h3>
-          <p>
-            The SharePoint Framework (SPFx) is a extensibility model for Microsoft Viva, Microsoft Teams and SharePoint. It&#39;s the easiest way to extend Microsoft 365 with automatic Single Sign On, automatic hosting and industry standard tooling.
-          </p>
-          <h4>Learn more about SPFx development:</h4>
-          <ul className={styles.links}>
-            <li><a href="https://aka.ms/spfx" target="_blank" rel="noreferrer">SharePoint Framework Overview</a></li>
-            <li><a href="https://aka.ms/spfx-yeoman-graph" target="_blank" rel="noreferrer">Use Microsoft Graph in your solution</a></li>
-            <li><a href="https://aka.ms/spfx-yeoman-teams" target="_blank" rel="noreferrer">Build for Microsoft Teams using SharePoint Framework</a></li>
-            <li><a href="https://aka.ms/spfx-yeoman-viva" target="_blank" rel="noreferrer">Build for Microsoft Viva Connections using SharePoint Framework</a></li>
-            <li><a href="https://aka.ms/spfx-yeoman-store" target="_blank" rel="noreferrer">Publish SharePoint Framework applications to the marketplace</a></li>
-            <li><a href="https://aka.ms/spfx-yeoman-api" target="_blank" rel="noreferrer">SharePoint Framework API reference</a></li>
-            <li><a href="https://aka.ms/m365pnp" target="_blank" rel="noreferrer">Microsoft 365 Developer Community</a></li>
-          </ul>
-        </div>
+
+        {loading && (
+          <div className={styles.loading}>
+            <Spinner size={SpinnerSize.large} label="Loading site owners..." />
+          </div>
+        )}
+
+        {error && (
+          <MessageBar messageBarType={MessageBarType.error} isMultiline={false}>
+            {error}
+          </MessageBar>
+        )}
+
+        {!loading && !error && siteOwners.length === 0 && (
+          <MessageBar messageBarType={MessageBarType.info}>
+            No site owners found.
+          </MessageBar>
+        )}
+
+        {!loading && !error && siteOwners.length > 0 && (
+          <Stack tokens={{ childrenGap: 15 }} className={styles.ownersContainer}>
+            {siteOwners.map((owner) => (
+              <div key={owner.Id} className={styles.ownerCard}>
+                <Persona
+                  text={owner.Title}
+                  secondaryText={owner.Email}
+                  size={PersonaSize.size48}
+                  imageUrl={`${this.props.siteUrl}/_layouts/15/userphoto.aspx?size=M&username=${owner.Email}`}
+                  className={styles.persona}
+                />
+              </div>
+            ))}
+          </Stack>
+        )}
       </section>
     );
   }

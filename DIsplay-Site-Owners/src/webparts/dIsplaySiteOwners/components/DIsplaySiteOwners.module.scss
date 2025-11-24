@@ -1,34 +1,72 @@
 @import '~@fluentui/react/dist/sass/References.scss';
 
-.dIsplaySiteOwners {
+.displaySiteOwners {
   overflow: hidden;
-  padding: 1em;
+  padding: 1.5em;
   color: "[theme:bodyText, default: #323130]";
   color: var(--bodyText);
+  background-color: "[theme:white, default: #ffffff]";
+  background-color: var(--white);
+  border-radius: 4px;
+  box-shadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
+  
   &.teams {
     font-family: $ms-font-family-fallbacks;
   }
 }
 
-.welcome {
-  text-align: center;
+.header {
+  margin-bottom: 1.5em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid "[theme:neutralLight, default: #edebe9]";
+  border-bottom-color: var(--neutralLight);
+  
+  h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: "[theme:themePrimary, default: #0078d4]";
+    color: var(--themePrimary);
+  }
 }
 
-.welcomeImage {
-  width: 100%;
-  max-width: 420px;
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3em 0;
 }
 
-.links {
-  a {
-    text-decoration: none;
-    color: "[theme:link, default:#03787c]";
-    color: var(--link); // note: CSS Custom Properties support is limited to modern browsers only
+.ownersContainer {
+  margin-top: 1em;
+}
 
-    &:hover {
-      text-decoration: underline;
-      color: "[theme:linkHovered, default: #014446]";
-      color: var(--linkHovered); // note: CSS Custom Properties support is limited to modern browsers only
-    }
+.ownerCard {
+  padding: 1em;
+  background-color: "[theme:neutralLighterAlt, default: #faf9f8]";
+  background-color: var(--neutralLighterAlt);
+  border-radius: 4px;
+  border: 1px solid "[theme:neutralLight, default: #edebe9]";
+  border-color: var(--neutralLight);
+  transition: all 0.2s ease-in-out;
+  
+  &:hover {
+    background-color: "[theme:neutralLighter, default: #f3f2f1]";
+    background-color: var(--neutralLighter);
+    box-shadow: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
+    transform: translateY(-2px);
+  }
+}
+
+.persona {
+  :global(.ms-Persona-primaryText) {
+    font-weight: 600;
+    color: "[theme:bodyText, default: #323130]";
+    color: var(--bodyText);
+  }
+  
+  :global(.ms-Persona-secondaryText) {
+    color: "[theme:neutralSecondary, default: #605e5c]";
+    color: var(--neutralSecondary);
   }
 }

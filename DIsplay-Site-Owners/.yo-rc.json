@@ -1,20 +1,20 @@
 {
   "@microsoft/generator-sharepoint": {
     "whichFolder": "subdir",
-    "solutionName": "DIsplay-Site-Owners",
+    "solutionName": "DisplaySiteOwners",
     "componentType": "webpart",
     "template": "react",
-    "componentName": "DIsplay-Site-Owners",
+    "componentName": "Display-Site-Owners",
     "plusBeta": false,
     "isCreatingSolution": true,
     "nodeVersion": "22.20.0",
     "sdksVersions": {},
     "version": "1.21.1",
-    "libraryName": "d-isplay-site-owners",
-    "libraryId": "d4a161c4-1529-4bd5-a67d-09b4ca096a65",
+    "libraryName": "DisplaySiteOwners",
+    "libraryId": "793274f3-c2e8-4ef0-80ef-72c61bd2dadd",
     "environment": "spo",
     "packageManager": "npm",
-    "solutionShortDescription": "DIsplay-Site-Owners description",
+    "solutionShortDescription": "Display-Site-Owners description",
     "skipFeatureDeployment": true,
     "isDomainIsolated": false
   }

@@ -8,28 +8,30 @@ import {
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
 
-import * as strings from 'DIsplaySiteOwnersWebPartStrings';
-import DIsplaySiteOwners from './components/DIsplaySiteOwners';
-import { IDIsplaySiteOwnersProps } from './components/IDIsplaySiteOwnersProps';
+import * as strings from 'DisplaySiteOwnersWebPartStrings';
+import DisplaySiteOwners from './components/DisplaySiteOwners';
+import { IDisplaySiteOwnersProps } from './components/IDisplaySiteOwnersProps';
 
-export interface IDIsplaySiteOwnersWebPartProps {
+export interface IDisplaySiteOwnersWebPartProps {
   description: string;
 }
 
-export default class DIsplaySiteOwnersWebPart extends BaseClientSideWebPart<IDIsplaySiteOwnersWebPartProps> {
+export default class DisplaySiteOwnersWebPart extends BaseClientSideWebPart<IDisplaySiteOwnersWebPartProps> {
 
   private _isDarkTheme: boolean = false;
   private _environmentMessage: string = '';
 
   public render(): void {
-    const element: React.ReactElement<IDIsplaySiteOwnersProps> = React.createElement(
-      DIsplaySiteOwners,
+    const element: React.ReactElement<IDisplaySiteOwnersProps> = React.createElement(
+      DisplaySiteOwners,
       {
         description: this.properties.description,
         isDarkTheme: this._isDarkTheme,
         environmentMessage: this._environmentMessage,
         hasTeamsContext: !!this.context.sdks.microsoftTeams,
-        userDisplayName: this.context.pageContext.user.displayName
+        userDisplayName: this.context.pageContext.user.displayName,
+        spHttpClient: this.context.spHttpClient,
+        siteUrl: this.context.pageContext.web.absoluteUrl
       }
     );
 

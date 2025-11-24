@@ -1,9 +1,9 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "d-isplay-site-owners-client-side-solution",
-    "id": "d4a161c4-1529-4bd5-a67d-09b4ca096a65",
-    "version": "1.0.0.0",
+    "name": "DisplaySiteOwners-client-side-solution",
+    "id": "793274f3-c2e8-4ef0-80ef-72c61bd2dadd",
+    "version": "0.1.0.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -16,10 +16,10 @@
     },
     "metadata": {
       "shortDescription": {
-        "default": "DIsplay-Site-Owners description"
+        "default": "Display-Site-Owners description"
       },
       "longDescription": {
-        "default": "DIsplay-Site-Owners description"
+        "default": "Display-Site-Owners description"
       },
       "screenshotPaths": [],
       "videoUrl": "",
@@ -27,14 +27,14 @@
     },
     "features": [
       {
-        "title": "d-isplay-site-owners Feature",
-        "description": "The feature that activates elements of the d-isplay-site-owners solution.",
+        "title": "display-site-owners Feature",
+        "description": "The feature that activates elements of the display-site-owners solution.",
         "id": "375c54cd-5701-4481-b20e-1047da007654",
         "version": "1.0.0.0"
       }
     ]
   },
   "paths": {
-    "zippedPackage": "solution/d-isplay-site-owners.sppkg"
+    "zippedPackage": "solution/DisplaySiteOwners.sppkg"
   }
 }

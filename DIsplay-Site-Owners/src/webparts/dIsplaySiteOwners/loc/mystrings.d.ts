@@ -1,4 +1,4 @@
-declare interface IDIsplaySiteOwnersWebPartStrings {
+declare interface IDisplaySiteOwnersWebPartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
   DescriptionFieldLabel: string;
@@ -13,7 +13,7 @@ declare interface IDIsplaySiteOwnersWebPartStrings {
   UnknownEnvironment: string;
 }
 
-declare module 'DIsplaySiteOwnersWebPartStrings' {
-  const strings: IDIsplaySiteOwnersWebPartStrings;
+declare module 'DisplaySiteOwnersWebPartStrings' {
+  const strings: IDisplaySiteOwnersWebPartStrings;
   export = strings;
 }

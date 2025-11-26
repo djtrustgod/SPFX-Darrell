@@ -21,7 +21,14 @@ export default class DisplaySiteOwnersWebPart extends BaseClientSideWebPart<IDis
   private _isDarkTheme: boolean = false;
   private _environmentMessage: string = '';
 
-  public render(): void {
+  public async render(): Promise<void> {
+    let graphClient;
+    try {
+      graphClient = await this.context.msGraphClientFactory.getClient('3');
+    } catch (error) {
+      console.error('Failed to get Graph client:', error);
+    }
+
     const element: React.ReactElement<IDisplaySiteOwnersProps> = React.createElement(
       DisplaySiteOwners,
       {
@@ -31,7 +38,9 @@ export default class DisplaySiteOwnersWebPart extends BaseClientSideWebPart<IDis
         hasTeamsContext: !!this.context.sdks.microsoftTeams,
         userDisplayName: this.context.pageContext.user.displayName,
         spHttpClient: this.context.spHttpClient,
-        siteUrl: this.context.pageContext.web.absoluteUrl
+        siteUrl: this.context.pageContext.web.absoluteUrl,
+        graphClient,
+        groupId: this.context.pageContext.site.group?.id
       }
     );
 

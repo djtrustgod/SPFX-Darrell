@@ -1,4 +1,4 @@
-import { SPHttpClient } from '@microsoft/sp-http';
+import { SPHttpClient, MSGraphClientV3 } from '@microsoft/sp-http';
 
 export interface ISiteOwner {
   Id: number;
@@ -15,4 +15,6 @@ export interface IDisplaySiteOwnersProps {
   userDisplayName: string;
   spHttpClient: SPHttpClient;
   siteUrl: string;
+  graphClient: MSGraphClientV3 | undefined;
+  groupId: string | undefined;
 }

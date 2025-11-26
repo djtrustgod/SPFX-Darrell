@@ -1,12 +1,18 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "DisplaySiteOwners-client-side-solution",
+    "name": "DisplaySiteOwners-web-part",
     "id": "793274f3-c2e8-4ef0-80ef-72c61bd2dadd",
-    "version": "0.1.0.0",
+    "version": "0.2.1.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Group.Read.All"
+      }
+    ],
     "developer": {
       "name": "",
       "websiteUrl": "",

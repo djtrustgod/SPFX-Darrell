@@ -70,3 +70,31 @@
     color: var(--neutralSecondary);
   }
 }
+
+.emailLink {
+  color: "[theme:link, default:#03787c]";
+  color: var(--link);
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+    color: "[theme:linkHovered, default: #014446]";
+    color: var(--linkHovered);
+  }
+}
+
+.section {
+  margin-bottom: 2em;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.sectionTitle {
+  margin: 0 0 1em 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: "[theme:themeDark, default: #005a9e]";
+  color: var(--themeDark);
+}

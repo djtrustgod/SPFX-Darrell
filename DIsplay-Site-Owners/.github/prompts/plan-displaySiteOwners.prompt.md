@@ -118,9 +118,5 @@ interface ISiteOwner {
 
 ### Future Enhancement Opportunities
 
-- Add property pane settings for display customization
-- Support for additional owner types (Members, Visitors)
-- Export functionality for owner lists
-- Filtering and search capabilities
-- Bulk email functionality
-- Mobile responsive optimizations
+- Add property pane settings for web part display and title customization
+- For Microsoft 365 Group sites, instead of the Subitle "Microsoft 365 Group Owners", show the actual Group name instead of "Microsoft 365 Group" and make this subitle optional in the property pane
